@@ -1,0 +1,501 @@
+Bug Name,Severity
+SQL Injection,Critical
+Remote Code Execution,Critical
+Command Injection,Critical
+Buffer Overflow,Critical
+Zero-Day Exploits,Critical
+Authentication Bypass,Critical
+Privilege Escalation,Critical
+Memory Corruption,Critical
+Deserialization of Untrusted Data,Critical
+Use After Free,Critical
+Out-of-bounds Write,Critical
+Heap Buffer Overflow,Critical
+Stack Buffer Overflow,Critical
+Format String Vulnerability,Critical
+Double Free,Critical
+Null Pointer Dereference,Critical
+Integer Overflow,Critical
+Path Traversal,Critical
+Directory Traversal,Critical
+Cross-Site Scripting (XSS),Critical
+Cross-Site Request Forgery (CSRF),Critical
+XML External Entity (XXE),Critical
+LDAP Injection,Critical
+Code Injection,Critical
+OS Command Injection,Critical
+Blind SQL Injection,Critical
+Time-based SQL Injection,Critical
+Boolean-based SQL Injection,Critical
+Union-based SQL Injection,Critical
+Error-based SQL Injection,Critical
+Server-Side Template Injection,Critical
+Client-Side Template Injection,Critical
+NoSQL Injection,Critical
+XPath Injection,Critical
+Expression Language Injection,Critical
+Object Injection,Critical
+Prototype Pollution,Critical
+Type Confusion,Critical
+Race Condition,Critical
+Time-of-check Time-of-use (TOCTOU),Critical
+Symlink Attack,Critical
+Hard Link Attack,Critical
+DLL Hijacking,Critical
+Binary Planting,Critical
+Arbitrary File Upload,Critical
+Unrestricted File Upload,Critical
+Path Manipulation,Critical
+Canonicalization Error,Critical
+Improper Input Validation,Critical
+Improper Output Encoding,Critical
+Insecure Deserialization,Critical
+Untrusted Deserialization,Critical
+Memory Leak,Critical
+Resource Exhaustion,Critical
+Denial of Service (DoS),Critical
+Distributed Denial of Service (DDoS),Critical
+Application DoS,Critical
+Network DoS,Critical
+Protocol DoS,Critical
+Algorithmic Complexity DoS,Critical
+Regex DoS (ReDoS),Critical
+XML Bomb,Critical
+Zip Bomb,Critical
+Fork Bomb,Critical
+Logic Bomb,Critical
+Backdoor,Critical
+Trojan Horse Functionality,Critical
+Hidden Functionality,Critical
+Debug Code in Production,Critical
+Test Code in Production,Critical
+Developer Backdoor,Critical
+Hardcoded Credentials,Critical
+Hardcoded Password,Critical
+Hardcoded API Key,Critical
+Hardcoded Encryption Key,Critical
+Weak Cryptographic Algorithm,Critical
+Broken Cryptographic Algorithm,Critical
+Weak Random Number Generation,Critical
+Predictable Random Numbers,Critical
+Insufficient Entropy,Critical
+Weak Key Generation,Critical
+Key Reuse,Critical
+IV Reuse,Critical
+Nonce Reuse,Critical
+Salt Reuse,Critical
+ECB Mode Usage,Critical
+CBC Padding Oracle,Critical
+Timing Attack,Critical
+Side-Channel Attack,Critical
+Cache-based Attack,Critical
+Power Analysis Attack,Critical
+Electromagnetic Attack,Critical
+Acoustic Attack,Critical
+Fault Injection Attack,Critical
+Cold Boot Attack,Critical
+VM Escape,Critical
+Container Escape,Critical
+Sandbox Escape,Critical
+Privilege Container Escalation,Critical
+Kernel Exploit,Critical
+Driver Exploit,Critical
+Firmware Exploit,Critical
+BIOS/UEFI Exploit,Critical
+Bootloader Exploit,Critical
+Hypervisor Exploit,Critical
+SMM Exploit,Critical
+TEE Exploit,Critical
+SGX Exploit,Critical
+ARM TrustZone Exploit,Critical
+Cross-Site Scripting (Reflected),High
+Cross-Site Scripting (DOM-based),High
+Insecure Direct Object Reference,High
+Missing Authentication,High
+Broken Access Control,High
+Session Fixation,High
+Session Hijacking,High
+Clickjacking,High
+Frame Injection,High
+HTTP Response Splitting,High
+HTTP Request Smuggling,High
+HTTP Parameter Pollution,High
+Host Header Injection,High
+CRLF Injection,High
+SSL/TLS Vulnerabilities,High
+Weak SSL/TLS Configuration,High
+Certificate Validation Bypass,High
+Man-in-the-Middle Attack,High
+Subdomain Takeover,High
+DNS Spoofing,High
+DNS Cache Poisoning,High
+ARP Spoofing,High
+BGP Hijacking,High
+Route Hijacking,High
+Session Management Flaws,High
+Weak Session Tokens,High
+Session Token Exposure,High
+Session Replay Attack,High
+Concurrent Session Attack,High
+CSRF Token Bypass,High
+Same-Site Request Forgery,High
+JSON Hijacking,High
+JSONP Callback Injection,High
+WebSocket Hijacking,High
+PostMessage Vulnerabilities,High
+Origin Validation Bypass,High
+CORS Misconfiguration,High
+CSRF via CORS,High
+SOP Bypass,High
+CSP Bypass,High
+XSS Filter Bypass,High
+WAF Bypass,High
+Authentication Bypass,High
+Authorization Bypass,High
+Password Reset Flaws,High
+Account Takeover,High
+Brute Force Attack,High
+Dictionary Attack,High
+Credential Stuffing,High
+Password Spraying,High
+Rainbow Table Attack,High
+Hash Collision Attack,High
+Length Extension Attack,High
+Padding Oracle Attack,High
+Chosen Plaintext Attack,High
+Chosen Ciphertext Attack,High
+Known Plaintext Attack,High
+Meet-in-the-Middle Attack,High
+Birthday Attack,High
+Differential Cryptanalysis,High
+Linear Cryptanalysis,High
+Algebraic Attack,High
+Related-Key Attack,High
+Weak Key Attack,High
+Key Recovery Attack,High
+Downgrade Attack,High
+Protocol Downgrade,High
+Version Rollback Attack,High
+SSL Strip Attack,High
+BEAST Attack,High
+CRIME Attack,High
+BREACH Attack,High
+POODLE Attack,High
+Heartbleed,High
+DROWN Attack,High
+FREAK Attack,High
+Logjam Attack,High
+Sweet32 Attack,High
+ROBOT Attack,High
+Padding Oracle On Downgraded Legacy,High
+Lucky Thirteen Attack,High
+RC4 NOMORE Attack,High
+SLOTH Attack,High
+Triple Handshake Attack,High
+CCS Injection,High
+Renegotiation Attack,High
+Compression Ratio Info-leak Attack,High
+Traffic Analysis Attack,High
+Inference Attack,High
+Statistical Attack,High
+Frequency Analysis,High
+Pattern Analysis,High
+Correlation Attack,High
+Differential Power Analysis,High
+Simple Power Analysis,High
+Electromagnetic Analysis,High
+Template Attack,High
+Profiling Attack,High
+Horizontal Attack,High
+Vertical Attack,High
+Online Attack,High
+Offline Attack,High
+Information Disclosure,Medium
+Sensitive Data Exposure,Medium
+Error Message Information Leak,Medium
+Stack Trace Exposure,Medium
+Debug Information Leak,Medium
+Application Fingerprinting,Medium
+Technology Stack Disclosure,Medium
+Version Information Disclosure,Medium
+Internal IP Address Disclosure,Medium
+Internal Path Disclosure,Medium
+Source Code Disclosure,Medium
+Configuration File Exposure,Medium
+Backup File Exposure,Medium
+Temporary File Exposure,Medium
+Log File Exposure,Medium
+Database Schema Exposure,Medium
+HTTP Methods Enabled,Medium
+Unnecessary HTTP Methods,Medium
+OPTIONS Method Enabled,Medium
+TRACE Method Enabled,Medium
+PUT Method Enabled,Medium
+DELETE Method Enabled,Medium
+WebDAV Enabled,Medium
+Directory Listing Enabled,Medium
+File Extension Handling,Medium
+MIME Type Sniffing,Medium
+Content Type Confusion,Medium
+File Type Confusion,Medium
+Double Extension Attack,Medium
+Null Byte Injection,Medium
+Magic Number Bypass,Medium
+File Inclusion,Medium
+Local File Inclusion,Medium
+Remote File Inclusion,Medium
+PHP File Inclusion,Medium
+ASP File Inclusion,Medium
+JSP File Inclusion,Medium
+Server-Side Includes Injection,Medium
+Template Injection,Medium
+SSTI,Medium
+CSTI,Medium
+Expression Language Injection,Medium
+SpEL Injection,Medium
+OGNL Injection,Medium
+MVEL Injection,Medium
+Velocity Injection,Medium
+FreeMarker Injection,Medium
+Twig Injection,Medium
+Jinja2 Injection,Medium
+Django Template Injection,Medium
+Smarty Injection,Medium
+Handlebars Injection,Medium
+Mustache Injection,Medium
+Pug Injection,Medium
+EJS Injection,Medium
+Nunjucks Injection,Medium
+Liquid Injection,Medium
+ERB Injection,Medium
+Haml Injection,Medium
+Slim Injection,Medium
+JSP EL Injection,Medium
+JSF EL Injection,Medium
+Thymeleaf Injection,Medium
+XSLT Injection,Medium
+XQuery Injection,Medium
+GraphQL Injection,Medium
+API Injection,Medium
+REST API Abuse,Medium
+SOAP Injection,Medium
+XML Injection,Medium
+JSON Injection,Medium
+YAML Injection,Medium
+CSV Injection,Medium
+Formula Injection,Medium
+Macro Injection,Medium
+VBA Injection,Medium
+PowerShell Injection,Medium
+Bash Injection,Medium
+Shell Injection,Medium
+Python Code Injection,Medium
+Ruby Code Injection,Medium
+PHP Code Injection,Medium
+JSP Code Injection,Medium
+ASP Code Injection,Medium
+Perl Code Injection,Medium
+TCL Code Injection,Medium
+Lua Code Injection,Medium
+R Code Injection,Medium
+SAS Code Injection,Medium
+MATLAB Code Injection,Medium
+Missing Security Headers,Low
+X-Frame-Options Missing,Low
+X-XSS-Protection Missing,Low
+X-Content-Type-Options Missing,Low
+Content-Security-Policy Missing,Low
+Strict-Transport-Security Missing,Low
+Referrer-Policy Missing,Low
+Feature-Policy Missing,Low
+Permissions-Policy Missing,Low
+Cross-Origin-Embedder-Policy Missing,Low
+Cross-Origin-Opener-Policy Missing,Low
+Cross-Origin-Resource-Policy Missing,Low
+X-Permitted-Cross-Domain-Policies Missing,Low
+X-Download-Options Missing,Low
+Expect-CT Missing,Low
+Public-Key-Pins Missing,Low
+Clear-Site-Data Missing,Low
+Weak Security Headers,Low
+Insecure Cookie Settings,Low
+Missing Secure Flag,Low
+Missing HttpOnly Flag,Low
+Missing SameSite Flag,Low
+Weak Cookie Path,Low
+Weak Cookie Domain,Low
+Long Cookie Expiration,Low
+Session Cookie Persistence,Low
+Insecure Session Storage,Low
+Client-Side Session Storage,Low
+Local Storage Abuse,Low
+Session Storage Abuse,Low
+IndexedDB Abuse,Low
+WebSQL Abuse,Low
+Cache Poisoning,Low
+Browser Cache Abuse,Low
+Proxy Cache Abuse,Low
+CDN Cache Abuse,Low
+HTTP Cache Abuse,Low
+Application Cache Abuse,Low
+Service Worker Abuse,Low
+Web Worker Abuse,Low
+SharedArrayBuffer Abuse,Low
+WebAssembly Abuse,Low
+WebRTC Abuse,Low
+WebGL Abuse,Low
+Canvas Fingerprinting,Low
+Audio Fingerprinting,Low
+Font Fingerprinting,Low
+Screen Fingerprinting,Low
+Battery API Abuse,Low
+Geolocation API Abuse,Low
+Camera API Abuse,Low
+Microphone API Abuse,Low
+Accelerometer API Abuse,Low
+Gyroscope API Abuse,Low
+Magnetometer API Abuse,Low
+Device Orientation API Abuse,Low
+Ambient Light API Abuse,Low
+Proximity API Abuse,Low
+Vibration API Abuse,Low
+Web Bluetooth API Abuse,Low
+Web USB API Abuse,Low
+Web NFC API Abuse,Low
+Payment Request API Abuse,Low
+Credential Management API Abuse,Low
+Web Authentication API Abuse,Low
+Push API Abuse,Low
+Notification API Abuse,Low
+Background Sync API Abuse,Low
+Service Worker API Abuse,Low
+Broadcast Channel API Abuse,Low
+Channel Messaging API Abuse,Low
+Shared Worker API Abuse,Low
+Dedicated Worker API Abuse,Low
+WebAssembly Streaming API Abuse,Low
+Encoding API Abuse,Low
+Web Crypto API Abuse,Low
+SubtleCrypto API Abuse,Low
+Performance API Abuse,Low
+Navigation Timing API Abuse,Low
+Resource Timing API Abuse,Low
+User Timing API Abuse,Low
+High Resolution Time API Abuse,Low
+Page Visibility API Abuse,Low
+Intersection Observer API Abuse,Low
+Mutation Observer API Abuse,Low
+Resize Observer API Abuse,Low
+Performance Observer API Abuse,Low
+Banner Grabbing,Informational
+Service Enumeration,Informational
+Port Scanning Results,Informational
+Technology Detection,Informational
+Framework Detection,Informational
+CMS Detection,Informational
+Server Detection,Informational
+Database Detection,Informational
+Programming Language Detection,Informational
+Third-Party Component Detection,Informational
+JavaScript Library Detection,Informational
+CSS Framework Detection,Informational
+CDN Detection,Informational
+Cloud Provider Detection,Informational
+Hosting Provider Detection,Informational
+DNS Record Analysis,Informational
+WHOIS Information,Informational
+SSL Certificate Information,Informational
+Subdomain Enumeration,Informational
+Virtual Host Detection,Informational
+Load Balancer Detection,Informational
+WAF Detection,Informational
+Honeypot Detection,Informational
+Bot Detection,Informational
+Rate Limiting Detection,Informational
+CAPTCHA Detection,Informational
+Two-Factor Authentication Detection,Informational
+Single Sign-On Detection,Informational
+OAuth Implementation Detection,Informational
+SAML Implementation Detection,Informational
+JWT Implementation Detection,Informational
+API Documentation Exposure,Informational
+GraphQL Introspection,Informational
+GraphQL Schema Exposure,Informational
+REST API Discovery,Informational
+SOAP API Discovery,Informational
+Microservice Discovery,Informational
+Container Detection,Informational
+Docker Detection,Informational
+Kubernetes Detection,Informational
+Serverless Detection,Informational
+Lambda Function Detection,Informational
+Cloud Function Detection,Informational
+Edge Function Detection,Informational
+Monitoring Tool Detection,Informational
+Logging Service Detection,Informational
+Analytics Tool Detection,Informational
+Tag Manager Detection,Informational
+A/B Testing Tool Detection,Informational
+Chat Widget Detection,Informational
+Social Media Widget Detection,Informational
+Payment Gateway Detection,Informational
+Shipping Provider Detection,Informational
+Email Service Detection,Informational
+SMS Service Detection,Informational
+Push Notification Service Detection,Informational
+Video Streaming Service Detection,Informational
+Image Processing Service Detection,Informational
+PDF Generation Service Detection,Informational
+File Storage Service Detection,Informational
+Backup Service Detection,Informational
+CDN Service Detection,Informational
+DNS Service Detection,Informational
+Domain Registrar Detection,Informational
+Certificate Authority Detection,Informational
+Time Synchronization Service Detection,Informational
+Geographic Location Service Detection,Informational
+Weather Service Detection,Informational
+Currency Exchange Service Detection,Informational
+Language Translation Service Detection,Informational
+Search Engine Detection,Informational
+Recommendation Engine Detection,Informational
+Machine Learning Service Detection,Informational
+AI Service Detection,Informational
+Blockchain Service Detection,Informational
+Cryptocurrency Service Detection,Informational
+Ad Network Detection,Informational
+Affiliate Network Detection,Informational
+Marketing Automation Detection,Informational
+CRM Detection,Informational
+ERP Detection,Informational
+HR System Detection,Informational
+Accounting System Detection,Informational
+Inventory System Detection,Informational
+Point of Sale System Detection,Informational
+E-commerce Platform Detection,Informational
+Content Management System Detection,Informational
+Forum Software Detection,Informational
+Wiki Software Detection,Informational
+Blog Platform Detection,Informational
+Social Network Platform Detection,Informational
+Dating Platform Detection,Informational
+Job Board Platform Detection,Informational
+Real Estate Platform Detection,Informational
+Travel Booking Platform Detection,Informational
+Event Management Platform Detection,Informational
+Learning Management System Detection,Informational
+Health Information System Detection,Informational
+Financial System Detection,Informational
+Government System Detection,Informational
+Military System Detection,Informational
+Industrial Control System Detection,Informational
+SCADA System Detection,Informational
+IoT Device Detection,Informational
+Smart Home Device Detection,Informational
+Wearable Device Detection,Informational
+Mobile App Detection,Informational
+Desktop App Detection,Informational
+Browser Extension Detection,Informational
+Plugin Detection,Informational
+Theme Detection,Informational
+Template Detection,Informational
